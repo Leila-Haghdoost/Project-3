@@ -1,0 +1,106 @@
+#app{
+  // background-color: green;
+  // display:flex;
+}
+.header{
+padding: 40px;
+// text-align: center;
+background-color: #1abc9c;
+// color: white;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #212121;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+/* Right-aligned link */
+.navbar a.right {
+    float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+.profileImage img {
+    border-radius: 50%;
+}
+.profileImage {
+  text-align: right;
+
+}
+
+/* Active/current link */
+.navbar a.active {
+    background-color: #666;
+    color: white;
+}
+.row {
+    // display: -ms-flexbox; /* IE10 */
+    display: flex;
+    // -ms-flex-wrap: wrap; /* IE10 */
+    // flex-wrap: wrap;
+    flex-direction: row;
+
+}
+
+/* Sidebar/left column */
+.side {
+    // -ms-flex: 30%; /* IE10 */
+    flex: 20%;
+    background-color: #f1f1f1;
+    padding: 20px;
+    // width:300px;
+
+}
+
+.movieSearchName{
+  display:inline;
+  color: white;
+}
+
+/* Main column */
+.main {
+    -ms-flex: 70%; /* IE10 */
+    flex: 70%;
+    // display: flex;
+    background-color: #333;
+    padding: 20px;
+    // width:800px;
+
+}
+
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+}
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 40px;
+  // background-color: #fff;
+  margin: 20px 50px;
+}
+.item{
+  background-color: white;
+  // border-radius: 5px;
+  padding: 20px;
+  // opacity: 0.8;
+  // font-size: 150%;
+}

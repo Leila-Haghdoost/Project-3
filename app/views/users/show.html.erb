@@ -1,0 +1,15 @@
+<div>
+<h2><%= @user.name %></h2>
+
+<div>
+  <%= link_to 'Edit Account', edit_user_path(@user) %>
+  |
+  <%= link_to 'Delete Account', user_path(@user), method: 'delete' %>
+</div>
+<br>
+
+<strong>Name:</strong> <%= @user.name %><br>
+
+<%= cl_image_tag @user.profile_image, alt: @user.name %>
+
+<div>

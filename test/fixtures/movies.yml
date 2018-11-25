@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  themoviedb_id: 1
+  title: MyText
+  backdrop_path: MyText
+  overview: MyText
+  poster_path: MyText
+  release_date: MyText
+  collection_id: 1
+
+two:
+  themoviedb_id: 1
+  title: MyText
+  backdrop_path: MyText
+  overview: MyText
+  poster_path: MyText
+  release_date: MyText
+  collection_id: 1

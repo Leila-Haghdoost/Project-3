@@ -1,0 +1,37 @@
+
+<% if flash[:errors].present?  %>
+   <strong>Please correct the following errors:</strong>
+   <ol>
+   <% flash[:errors].each do |error| %>
+     <li><%= error %></li>
+   <% end %>
+   </ol>
+<% end %>
+
+
+
+    <%= form_for(@user, html: {multipart: true}) do |f| %>
+    <span>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </span>
+    <span>
+    <%= f.label :email %>
+    <%= f.text_field :email, placeholder:"Enter email"%>
+  </span>
+    <span>
+    <%= f.label :password %>
+    <%= f.password_field :password,  placeholder:"Password" %>
+  </span>
+    <span>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, placeholder:"Password confirmation"  %>
+  </span >
+  <br>
+    <span>
+    <%= f.label :profile_image %>
+    <%= f.cl_image_upload :profile_image, placeholder:"Password"%>
+  </span >
+  <br>
+    <%= f.submit 'Submit' %>
+  <% end %>
