@@ -29,6 +29,7 @@ class CollectionMoviesList extends Component {
     return(
       <div>
         <h2>{collection.name}</h2>
+        <a href=''>Delete</a>
         {/* /Check if Movie list exist/ */}
           {collection.movies &&
             <MovieList movies={collection.movies} userCollections={collectionsList}/>
