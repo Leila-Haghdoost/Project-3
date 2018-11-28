@@ -4,5 +4,5 @@
 <br>
 <h2>My Collections</h2>
 <%  @current_user.collections.each do |collection| %>
-<%= link_to collection.name, users_collections_movies_path %><br>
+<%= link_to collection.name, collection_path(collection.id) %><br>
 <% end %>

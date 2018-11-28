@@ -41,6 +41,7 @@ class CollectionsList extends Component {
           }}>{collection.name}</Link></li>;
         })}
         </ul>
+        <button><a href='/collections/new'>Create New Collection</a></button>
       </div>
     )
   }

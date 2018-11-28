@@ -8,7 +8,7 @@ class CollectionsController < ApplicationController
     @collection = Collection.create (collection_params)
     @collection.user_id = @current_user.id
     @collection.save
-    redirect_to( collection_path(@collection.id) )
+    redirect_to( app_path + '#collections' )
   end
 
   def index
