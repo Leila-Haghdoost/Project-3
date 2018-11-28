@@ -30,35 +30,80 @@ puts "Created #{User.all.length} users."
 
 
 
+
+
+
+
+
+
 Collection.destroy_all
 
 c1 = Collection.create name: 'Christmas Movies', user_id: u1.id
-c2 = Collection.create name: 'Best of 2018', user_id: u2.id
-c3 = Collection.create name: 'Kids movies', user_id: u3.id
-c4 = Collection.create name: 'Favourites', user_id: u1.id
-
+c2 = Collection.create name: 'Best of 2018', user_id: u1.id
+c3 = Collection.create name: 'Kids movies', user_id: u1.id
+c4 = Collection.create name: 'Favourites', user_id: u2.id
+c5 = Collection.create name: 'Oscar Winners', user_id: u2.id
+c6 = Collection.create name: 'Family & Kids', user_id: u2.id
+c7 = Collection.create name: 'Friends suggestions', user_id: u3.id
+c8 = Collection.create name: 'Must watch', user_id: u3.id
+c9 = Collection.create name: 'My choice', user_id: u3.id
 
 puts "Created #{Collection.all.length} collections."
 
 
 
 
+#
+#
+# m1 = Movie.create themoviedb_id: 360920, release_date: "1995-10-20"
+#
+# m2 = Movie.create themoviedb_id: 324234, release_date: "1995-10-20"
+#
+# m3 = Movie.create themoviedb_id: 234234, release_date: "1995-10-20"
+#
+
+
+
 
 Movie.destroy_all
 
-m1 = Movie.create themoviedb_id: 360920, release_date: "1995-10-20"
+m1 = Movie.create themoviedb_id: 375588, release_date: "2018-11-21" , poster_path: 'https://image.tmdb.org/t/p/w300/AiRfixFcfTkNbn2A73qVJPlpkUo.jpg'
 
-m2 = Movie.create themoviedb_id: 324234, release_date: "1995-10-20"
 
-m3 = Movie.create themoviedb_id: 234234, release_date: "1995-10-20"
+m2 = Movie.create themoviedb_id: 480530, release_date: "2018-11-21" , poster_path: 'https://image.tmdb.org/t/p/w300/v3QyboWRoA4O9RbcsqH8tJMe8EB.jpg'
 
+
+m3 = Movie.create themoviedb_id: 404368, release_date: "2018-11-21" , poster_path: 'https://image.tmdb.org/t/p/w300/m110vLaDDOCca4hfOcS5mK5cDke.jpg'
+
+m4 = Movie.create themoviedb_id: 503616, release_date: "2018-12-21" , poster_path: 'https://image.tmdb.org/t/p/w300/hNRX9LrtYiXUKFMjcHLZ9QrBbH9.jpg'
+
+
+m5 = Movie.create themoviedb_id: 194662, release_date: "2015-01-15" , poster_path: 'https://image.tmdb.org/t/p/w300/rSZs93P0LLxqlVEbI001UKoeCQC.jpg'
+
+
+m6 = Movie.create themoviedb_id: 324857, release_date: "2018-12-14" , poster_path: 'https://image.tmdb.org/t/p/w300/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg'
+
+m7 = Movie.create themoviedb_id: 351044, release_date: "2018-12-21" , poster_path: 'https://image.tmdb.org/t/p/w300/yWY4WRcjvOtGiGvLEPDhOCZvBn.jpg'
+
+
+m8 = Movie.create themoviedb_id: 360920, release_date: "2018-11-09" , poster_path: 'https://image.tmdb.org/t/p/w300/i5OqdE9T7X02hpXIETzZAOTf2za.jpg'
+m9 = Movie.create themoviedb_id: 426543, release_date: "2018-11-02" , poster_path: 'https://image.tmdb.org/t/p/w300/aRD1vLU7k5NHO0HThfHrjEQwWRz.jpg'
 
 
 puts "Created #{Movie.all.length} movies."
 
-c1.movies << m1 << m2
-c2.movies << m3 << m1
-c3.movies << m2 << m3
+
+
+
+c1.movies << m1 << m8 << m9
+c2.movies << m2 << m5
+c3.movies << m3
+c4.movies << m4 << m3
+c5.movies << m5
+c6.movies << m6 <<  m2
+c7.movies << m7
+c8.movies << m1 << m8 << m6
+c9.movies << m1 << m8 << m9
 
 
 

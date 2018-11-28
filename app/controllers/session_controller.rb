@@ -12,7 +12,7 @@ class SessionController < ApplicationController
       # this is the session key which we will use to check if the user
       # is logged in on all future pages
       session[:user_id] = user.id
-      redirect_to app_path( user.id )
+      redirect_to app_path
     else
       # If the user cannot be authenticated, redirect them to the login_path.
 

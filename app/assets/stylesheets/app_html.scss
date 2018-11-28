@@ -89,6 +89,7 @@ background-color: #1abc9c;
     padding: 20px;
     text-align: center;
     background: #ddd;
+    display:fixed;
 }
 .container{
   display: grid;
@@ -103,4 +104,83 @@ background-color: #1abc9c;
   padding: 20px;
   // opacity: 0.8;
   // font-size: 150%;
+}
+
+
+
+
+////////////////////
+.loginContainer{
+  // background-color:red;
+  width: 500px;
+  height: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  justify-content: center;
+  align-content: center;
+
+}
+.loginWrapper{
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
+.inputBox{
+  justify-content: center;
+
+width:400px;
+height:30px;
+padding: 12px;
+border: none;
+border-radius: 4px;
+margin: 5px 0;
+opacity: 0.85;
+// display: inline-block;
+font-size: 17px;
+line-height: 20px;
+text-decoration: none;
+border: 1px solid grey;
+margin-left: auto;
+margin-right: auto;
+}
+
+.inputBoxlogin {
+background-color:#1abc9c;
+color: white;
+width:430px;
+height:50px;
+padding: 12px;
+margin: 5px 0;
+// display: inline-block;
+font-size: 17px;
+line-height: 20px;
+text-decoration: none;
+border-radius: 4px;
+margin-left: auto;
+margin-right: auto;
+
+}
+.loginfont{
+font-size: 24px;
+font-family: "Helvetica";
+font-weight: normal;
+color:#212121;
+margin-top: 50px;
+line-height: 20px;
+margin-left: auto;
+margin-right: auto;
+// background-color:yellow;
+text-align: center;
+padding: 15px;
+margin-top: 0px;
+}
+
+.profileText{
+
+  font-size: 17px;
+  line-height: 20px;
+  font-family: "Helvetica";
+  margin: 10px 0;
 }

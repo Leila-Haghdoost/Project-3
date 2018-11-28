@@ -9,29 +9,29 @@
 <% end %>
 
 
+<div class="loginContainer">
+  <div class="loginWrapper">
+
 
     <%= form_for(@user, html: {multipart: true}) do |f| %>
     <span>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name , placeholder:"User name" , class:"inputBox" %>
     </span>
     <span>
-    <%= f.label :email %>
-    <%= f.text_field :email, placeholder:"Enter email"%>
+    <%= f.text_field :email, placeholder:"Enter email" , class:"inputBox" %>
   </span>
     <span>
-    <%= f.label :password %>
-    <%= f.password_field :password,  placeholder:"Password" %>
+    <%= f.password_field :password,  placeholder:"Password" , class:"inputBox" %>
   </span>
     <span>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, placeholder:"Password confirmation"  %>
+    <%= f.password_field :password_confirmation, placeholder:"Password confirmation" , class:"inputBox"  %>
   </span >
   <br>
-    <span>
+    <div class="profileText">
     <%= f.label :profile_image %>
-    <%= f.cl_image_upload :profile_image, placeholder:"Password"%>
-  </span >
-  <br>
-    <%= f.submit 'Submit' %>
+    <%= f.cl_image_upload :profile_image, placeholder:"Password" , class:"inputBox" %>
+  </div>
+    <%= f.submit 'Submit' , class:"inputBoxlogin"%>
   <% end %>
+  </div>
+</div>

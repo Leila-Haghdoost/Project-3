@@ -12,6 +12,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import MovieDetail from './components/MovieDetail';
+import CollectionsList from './components/CollectionsList';
+import CollectionMoviesList from './components/CollectionsList/CollectionMoviesList';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
 
@@ -23,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     <div>
       <Route exact path="/" component={App}/>
       <Route exact path="/movie/:movieId" component={MovieDetail}/>
+      <Route exact path="/collections" component={CollectionsList}/>
+      <Route exact path="/collections/:collectionId" component={CollectionMoviesList}/>
     </div>
   </Router>, container);
 })

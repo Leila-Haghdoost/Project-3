@@ -1,0 +1,8 @@
+
+<%= link_to 'Create New Collection', new_collection_path %>
+<br>
+<br>
+<h2>My Collections</h2>
+<%  @current_user.collections.each do |collection| %>
+<%= link_to collection.name, users_collections_movies_path %><br>
+<% end %>
