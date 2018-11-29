@@ -12,12 +12,13 @@ class MoviePreview extends Component {
 
 
   render () {
+  //check if movie poster is present
     const {movie} = this.props
     let imgURL
     if (movie.poster_path){
-      imgURL = `${imageBaseURL}${movie.poster_path}`
+      imgURL = imageBaseURL + movie.poster_path;
     } else {
-      imgURL = `${ImgNotAvailable}`
+      imgURL = ImgNotAvailable;
     }
     return (
         <div className="item">

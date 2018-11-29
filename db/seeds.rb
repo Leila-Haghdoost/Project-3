@@ -67,27 +67,27 @@ puts "Created #{Collection.all.length} collections."
 
 Movie.destroy_all
 
-m1 = Movie.create themoviedb_id: 375588, release_date: "2018-11-21" , poster_path: 'https://image.tmdb.org/t/p/w300/AiRfixFcfTkNbn2A73qVJPlpkUo.jpg'
+m1 = Movie.create themoviedb_id: 375588, release_date: "2018-11-21" , poster_path: '/AiRfixFcfTkNbn2A73qVJPlpkUo.jpg'
 
 
-m2 = Movie.create themoviedb_id: 480530, release_date: "2018-11-21" , poster_path: 'https://image.tmdb.org/t/p/w300/v3QyboWRoA4O9RbcsqH8tJMe8EB.jpg'
+m2 = Movie.create themoviedb_id: 480530, release_date: "2018-11-21" , poster_path: '/v3QyboWRoA4O9RbcsqH8tJMe8EB.jpg'
 
 
-m3 = Movie.create themoviedb_id: 404368, release_date: "2018-11-21" , poster_path: 'https://image.tmdb.org/t/p/w300/m110vLaDDOCca4hfOcS5mK5cDke.jpg'
+m3 = Movie.create themoviedb_id: 404368, release_date: "2018-11-21" , poster_path: '/m110vLaDDOCca4hfOcS5mK5cDke.jpg'
 
-m4 = Movie.create themoviedb_id: 503616, release_date: "2018-12-21" , poster_path: 'https://image.tmdb.org/t/p/w300/hNRX9LrtYiXUKFMjcHLZ9QrBbH9.jpg'
-
-
-m5 = Movie.create themoviedb_id: 194662, release_date: "2015-01-15" , poster_path: 'https://image.tmdb.org/t/p/w300/rSZs93P0LLxqlVEbI001UKoeCQC.jpg'
+m4 = Movie.create themoviedb_id: 503616, release_date: "2018-12-21" , poster_path: '/hNRX9LrtYiXUKFMjcHLZ9QrBbH9.jpg'
 
 
-m6 = Movie.create themoviedb_id: 324857, release_date: "2018-12-14" , poster_path: 'https://image.tmdb.org/t/p/w300/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg'
-
-m7 = Movie.create themoviedb_id: 351044, release_date: "2018-12-21" , poster_path: 'https://image.tmdb.org/t/p/w300/yWY4WRcjvOtGiGvLEPDhOCZvBn.jpg'
+m5 = Movie.create themoviedb_id: 194662, release_date: "2015-01-15" , poster_path: '/rSZs93P0LLxqlVEbI001UKoeCQC.jpg'
 
 
-m8 = Movie.create themoviedb_id: 360920, release_date: "2018-11-09" , poster_path: 'https://image.tmdb.org/t/p/w300/i5OqdE9T7X02hpXIETzZAOTf2za.jpg'
-m9 = Movie.create themoviedb_id: 426543, release_date: "2018-11-02" , poster_path: 'https://image.tmdb.org/t/p/w300/aRD1vLU7k5NHO0HThfHrjEQwWRz.jpg'
+m6 = Movie.create themoviedb_id: 324857, release_date: "2018-12-14" , poster_path: '/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg'
+
+m7 = Movie.create themoviedb_id: 351044, release_date: "2018-12-21" , poster_path: '/yWY4WRcjvOtGiGvLEPDhOCZvBn.jpg'
+
+
+m8 = Movie.create themoviedb_id: 360920, release_date: "2018-11-09" , poster_path: '/i5OqdE9T7X02hpXIETzZAOTf2za.jpg'
+m9 = Movie.create themoviedb_id: 426543, release_date: "2018-11-02" , poster_path: '/aRD1vLU7k5NHO0HThfHrjEQwWRz.jpg'
 
 
 puts "Created #{Movie.all.length} movies."
