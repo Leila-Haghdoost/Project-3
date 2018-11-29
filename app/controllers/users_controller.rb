@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def get_collections
     if @current_user.present?
-      render json: @current_user.collections.select(:id, :name)
+      render json: @current_user.collections, include: { movies: { only: 'poster_path'} }
     else
       render json: nil
     end
