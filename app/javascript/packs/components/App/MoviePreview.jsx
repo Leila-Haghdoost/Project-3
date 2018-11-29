@@ -28,6 +28,13 @@ class MoviePreview extends Component {
             <img  src={imgURL}  alt={movie.title}  className="image"/>
           </Link>
           <div className="overlay">{movie.title}</div>
+          {/*
+            userCollections is only present if a user has logged in, so this is really a test that
+            only shows the Remove button if the user is logged in AND this MoviePreview->MovieList is
+            being rendered from the Collections
+          */}
+          { (this.props.userCollections && this.props.removeButton)
+            && <button onClick={() => this.props.removeButton(movie.id)}>Remove</button> }
         </div>
     )
   }

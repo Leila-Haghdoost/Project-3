@@ -1,9 +1,14 @@
 class UsersController < ApplicationController
 
-  before_action :check_if_logged_in, only: [:get_collections, :edit]
+  before_action :check_if_logged_in, only: [:edit]
 
   def get_collections
-    render json: @current_user.collections.select(:id, :name)
+    if @current_user.present?
+      render json: @current_user.collections.select(:id, :name)
+    else
+      render json: nil
+    end
+
   end
 
 

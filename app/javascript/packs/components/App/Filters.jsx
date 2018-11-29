@@ -68,7 +68,6 @@ class Filters extends Component {
     return (
       <div>
         <div>
-
           {genres.map(genre => {
             return (
             <div key={genre.id}>
@@ -86,6 +85,7 @@ class Filters extends Component {
             )
           })}
         </div>
+  <hr className="line"/>
         <div>
           <label htmlFor="year">Year </label>
           <select id="year"
@@ -100,6 +100,7 @@ class Filters extends Component {
             })}
           </select>
         </div>
+  <hr className="line"/>
         <div>
           <label htmlFor="sort">Sort </label>
           <select id="sort"

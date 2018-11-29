@@ -1,22 +1,48 @@
 
 
 .movieImage{
-  background-color: White;
+  background-color: #e0e0e0;
   padding: 5px;
-  // border: 5px solid red;
 }
 .movieInfo{
   background-color: #e0e0e0;
   padding: 5px;
-  // border: 5px solid red;
   padding-left: 30px;
 }
 
 
-.row {
+
+.movieRow {
   display: flex;
+  width: 60%;
+  margin: 0px auto;
+}
+
+.singleMovieContainer {
+  background-color: #333333;
+
 }
 
 
+.movieTitle {
+  font-size: 20pt;
+  // margin-bottom: 7px;
+  line-height: 14px;
+}
 
+.movieTagline {
+  font-size: 30pt;
+  font-weight: normal;
+  margin-top: 0;
+}
+
+.info {
+  line-height: 30px;
+
+}
+
+.overview{
+  line-height: 30px;
+  width: 50%;
+}
 ///////////////////////////////

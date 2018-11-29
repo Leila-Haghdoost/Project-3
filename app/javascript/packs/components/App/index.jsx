@@ -47,11 +47,14 @@ class App extends Component {
   filterList = () => {
     const genres = this.state.selectedGenres;
     const year = this.state.year;
+    // console.log('year: ', year);
     // we always filter on the ORIGINAL API response which is in this.state.movies....
     // and we only display what is in this.state.filteredMovies
     const filteredMovies = this.state.movies.filter( m => {
-      return genres.every( g => m.genre_ids.includes(g) ) &&   m.release_date.substring(0, 4) === year ;
-
+      return genres.every( g => m.genre_ids.includes(g) )
+             &&
+             // only filter by year if the year has been set
+             ( !year || m.release_date.substring(0, 4) === year );
     });
     this.setState({filteredMovies});
   }
@@ -99,29 +102,35 @@ class App extends Component {
 
     return(
     <div className="row">
-      <div className="side">
-        <h2>Filter by:</h2>
-        <Filters
-          onYearChange={ (selectedYear)=> {
-            this.setState({year:selectedYear}, this.filterList )}}
-          onSortChange={(sortBy)=> {
-            this.setState({sort:sortBy}, this.updateList )}}
-          onGenreChange={ (selectedGenres)=> {
-            this.setState({selectedGenres:selectedGenres}, this.filterList )}}
-      />
 
-      </div>
-      <div className="main">
-        <div className="movieSearchName">
-          <h2>Movie Search</h2>
+      { true
+        &&
+        <div className="side">
+          <h2>Filter by:</h2>
+          <Filters
+            onYearChange={ (selectedYear)=> {
+              this.setState({year:selectedYear}, this.filterList )}}
+            onSortChange={(sortBy)=> {
+              this.setState({sort:sortBy}, this.updateList )}}
+            onGenreChange={ (selectedGenres)=> {
+              this.setState({selectedGenres:selectedGenres}, this.filterList )}}
+        />
         </div>
-        <input
-          type={'text'}
-          ref={this.titleRef}
-          onChange={()=> {
-            const input = this.titleRef.current.value
-            this.setState({title:input}, this.searchByTitle )
-        }}/>
+      }
+
+      <div className="main">
+        <div className="movieSearch">
+          {/* <h2>Movie Search</h2> */}
+          <input
+            className="searchInput"
+            type={'text'}
+            placeholder={'Search'}
+            ref={this.titleRef}
+            onChange={()=> {
+              const input = this.titleRef.current.value
+              this.setState({title:input}, this.searchByTitle )
+          }}/>
+        </div>
         <MovieList movies={filteredMovies} userCollections={this.state.userCollections} />
       </div>
     </div>

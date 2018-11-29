@@ -1,5 +1,8 @@
 class CollectionsController < ApplicationController
 
+  skip_before_action :verify_authenticity_token
+
+
   def new
     @collection = Collection.new
   end
@@ -36,7 +39,8 @@ class CollectionsController < ApplicationController
     def destroy
     @collection = Collection.find params[:id]
     @collection.destroy
-    redirect_to  (collections_path)
+    render json: {status: 'SUCCESS'}
+    # redirect_to  (collections_path)
     end
 
   private

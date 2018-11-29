@@ -15,7 +15,7 @@ class MovieList extends Component {
       <div className="container">
         {movies.map(movie => {
           return (
-            <MoviePreview key={movie.id} movie={movie} userCollections={this.props.userCollections} />
+            <MoviePreview key={movie.id} movie={movie} userCollections={this.props.userCollections} removeButton={this.props.removeButton} />
           )
         })}
       </div>

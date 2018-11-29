@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-// import MovieShowPage from './MovieShowPage'
+import {Link} from 'react-router-dom'
 
 const MOVIE_DETAILS_BASE_URL = 'https://api.themoviedb.org/3/movie/';
 const API_KEY = '?api_key=f63e106e9e1f568053f10f646d2f3879'
@@ -14,7 +14,8 @@ class MovieDetail extends Component {
 
     this.state = {
       movie: {},
-      addedToCollectionMesage: ''
+      addedToCollectionMesage: '',
+      userCollections: []
     };
   }
 
@@ -33,11 +34,17 @@ class MovieDetail extends Component {
       console.error('movie lookup error', error);
     });
 
-    if( !this.props.location.userCollections ){
+    if( this.props.location.userCollections === undefined ){
       // Get user collection list using AJAX request (same as in App/index.js)
       // if the userCollections array has not been passed into this component
       // (This will only be necessary when this route is loaded/refreshed directly,
       // instead of being reached by clicking on a movie search result)
+
+      axios.get('/users/collections')
+      .then( res => this.setState({ userCollections: res.data }) )
+      .catch((error) => {
+        console.error(error);
+      });
 
     }
 
@@ -69,14 +76,37 @@ class MovieDetail extends Component {
 
   render(){
 
-    const url = this.state.movie.poster_path ? `https://image.tmdb.org/t/p/w400/${this.state.movie.poster_path}`:
-    ''
+    if( !this.state.movie.id ){
+      // This means that the movie data has not loaded from the API request yet,
+      // so show a loading message instead of movie info
+      return <p>Loading...</p>;
+    }
 
-    const userCollections = this.props.location.userCollections;
+    const posterURL = `https://image.tmdb.org/t/p/w400/${this.state.movie.poster_path}`;
+
+
+    let userCollections;
+    if( this.state.userCollections && this.state.userCollections.length > 0) {
+      // User was logged in, and reloaded the page - so userCollections was set
+      // into state from AJAX request in componentDidMount()
+      userCollections = this.state.userCollections;
+    } else {
+      // Otherwise the component was rendered from another route, so userCollections came
+      // from props - BUT it might still be 'undefined' if the user was not logged in
+      userCollections = this.props.location.userCollections;
+    }
+
+    // console.log('userCollections', userCollections);
 
     let addToCollection;
 
-    if( userCollections ){
+    if( userCollections === null || userCollections === undefined ){
+
+      // this means the user is not logged in
+      addToCollection = <p><a href="/login">Login</a> to add to a collection</p>;
+
+    } else if( 'length' in userCollections && userCollections.length > 0 ){
+
       addToCollection = (
         <div>
           Add to Collection:
@@ -88,26 +118,29 @@ class MovieDetail extends Component {
           </select>
         </div>
       );
+
     } else {
-      addToCollection = <p>Create a collection to add movies to it.</p>;
+      // Collections array is empty
+      addToCollection = <p><Link to="/collections">Create a collection</Link> to add movies to it.</p>;
     }
 
     return(
-      <div>
-        <div className="row">
+      <div className="singleMovieContainer">
+        <div className="movieRow">
           <div className="movieImage">
-          <img  src= {url} />
+          <img  src={posterURL} />
           </div>
           <div className="movieInfo">
-            <h4>Title: { this.state.movie.title}</h4>
-            <h4>tagline: { this.state.movie.tagline}</h4>
-            <h4>director: { this.state.movie.director}</h4>
-            <h4>original_language: { this.state.movie.original_language}</h4>
-            <h4>status: { this.state.movie.status}</h4>
-            <h4>release_date: { this.state.movie.release_date}</h4>
-            <h4>overview: { this.state.movie.overview}</h4>
-            <h4>vote_average: { this.state.movie.vote_average}</h4>
-            <h4>vote_count: { this.state.movie.vote_count}</h4>
+            <h2 className="movieTitle">{ this.state.movie.title}</h2>
+            <div className="tagline">{ this.state.movie.tagline}</div>
+            <br/>
+            <div className="info"><strong>original_language:</strong> { this.state.movie.original_language}</div>
+            <div className="info"><strong>status:</strong> { this.state.movie.status}</div>
+            <div className="info"><strong>release_date:</strong> { this.state.movie.release_date}</div>
+            <br/>
+            <div className="overview"><strong>overview: </strong> { this.state.movie.overview}</div>
+            <h4 className="">vote_average: { this.state.movie.vote_average}</h4>
+            <h4 className="">vote_count: { this.state.movie.vote_count}</h4>
 
             { addToCollection }
             <p>{ this.state.addedToCollectionMesage }</p>

@@ -1,13 +1,46 @@
-#app{
+body{
+  font-family: Lato;
   // background-color: green;
   // display:flex;
 }
-.header{
-padding: 40px;
-// text-align: center;
-background-color: #1abc9c;
-// color: white;
+.logoimage{
+  width: 220px;
+  margin-left: 50px;
+  margin-top:25px;
+
 }
+.welcomText h4{
+  float:right;
+  // display:flex;
+  position: static;
+  margin:-20px 55px 0px 5px;
+
+}
+
+.header{
+background-color: #1abc9c;
+height: 200px;
+margin: 0px;
+
+}
+.profile{
+
+}
+
+.headerImage {
+  display:inline;
+}
+
+#profileImage img {
+  border-radius: 50%;
+  margin-right: 60px;
+  margin-top: 50px;
+  float: right;
+  display:flex;
+}
+
+
+
 
 .navbar {
     overflow: hidden;
@@ -20,7 +53,7 @@ background-color: #1abc9c;
 /* Style the navigation bar links */
 .navbar a {
     float: left;
-    display: block;
+    // display: block;
     color: white;
     text-align: center;
     padding: 14px 20px;
@@ -36,13 +69,10 @@ background-color: #1abc9c;
     background-color: #ddd;
     color: black;
 }
-.profileImage img {
-    border-radius: 50%;
-}
-.profileImage {
-  text-align: right;
 
-}
+
+
+
 
 /* Active/current link */
 .navbar a.active {
@@ -68,28 +98,43 @@ background-color: #1abc9c;
 
 }
 
-.movieSearchName{
-  display:inline;
+.movieSearch{
   color: white;
 }
+// .movieSearch input{
+//   display:inline;
+// }
 
 /* Main column */
 .main {
-    -ms-flex: 70%; /* IE10 */
-    flex: 70%;
+    // -ms-flex: 70%; /* IE10 */
+    // flex: 70%;
     // display: flex;
     background-color: #333;
     padding: 20px;
     // width:800px;
 
 }
+.searchInput{
+  // float: right;
+  padding: 10px;
+  // border: none;
+  margin-top: 10px;
+  margin-top: 20px;
+  margin-right: 20px;
+  font-size: 17px;
+  margin-left: 50px;
+  width: 228px;
+}
+
 
 
 .footer {
     padding: 20px;
     text-align: center;
-    background: #ddd;
+    background: #212121;
     display:fixed;
+    color: #fff;
 }
 .container{
   display: grid;
@@ -183,4 +228,10 @@ margin-top: 0px;
   line-height: 20px;
   font-family: "Helvetica";
   margin: 10px 0;
+}
+
+.row {
+  display: flex;
+  // width: 60%;
+  margin: 0px auto;
 }

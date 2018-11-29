@@ -14,13 +14,19 @@
 
   <body>
     <div class="header">
-            <h1>MUVEE</h1>
+          <div class="headerImage">
+            <%= image_tag "Logo.png" , :width=>220 , class:"logoimage" %>
+          </div>
             <% if @current_user.present? %>
-            <div class="profileImage">
-              Welcome, <%= @current_user.name %>
-              <%= cl_image_tag @current_user.profile_image, :width=>100, :height=>100, :gravity=>"faces", :crop=>"fill" %>
-              <% end %>
+            <div class="headerImage" id="profileImage">
+              <%= cl_image_tag @current_user.profile_image, :width=>100, :height=>100, :gravity=>"faces", :crop=>"fill" , class:"profileImage"%>
             </div>
+            <div class="welcomText">
+              <h4>Welcome, <%= @current_user.name %></h4>
+            </div>
+              <% end %>
+
+
         <!-- ///////////Nav Items///////////// -->
     </div>
     <div class="navbar">
@@ -30,7 +36,7 @@
                  <% if @current_user.present? %>
                   <%= link_to 'My Account', edit_user_path(@current_user.id) %>
                  <%= link_to 'Logout', login_path, method: 'delete' %>
-                 <%= link_to 'Collection', app_path + '#collections' %>
+                 <%= link_to 'Collection', app_path + '#/collections' %>
 
                  <% else %>
 
