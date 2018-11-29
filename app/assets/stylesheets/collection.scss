@@ -1,5 +1,9 @@
 .collectionBodycontainer{
-height:400px;
+height:500px;
+
+  display: flex;
+  width: 60%;
+  margin: 0px auto;
 
 }
 
@@ -24,7 +28,7 @@ margin: auto;
   height: 160px;
   // display: inline
   margin-bottom: 10px;
-  margin:0px 5px;
+  margin:0px 10px;
   justify-content: center;
   align-items: center;
    justify-content: center;
@@ -32,36 +36,83 @@ margin: auto;
 }
 
 
-.collectionName a {
-  padding:10px;
+.collectionName  {
   text-decoration: none;
+  padding-left: 20px;
+  color: black;
+
 }
 
-
-.collectionBtn a{
-    background-color: #3498DB;
+.collectionBtn a:link, a:visited {
+    background-color: #a29f9f;
     color: white;
-    padding: 16px;
-    font-size: 16px;
-    border-radius: 5px;
-    // border: none;
-    cursor: pointer;
+    padding: 14px 25px;
+    text-align: center;
     text-decoration: none;
-    width:300px;
-    height:300px;
+    display: inline-block;
+    border-radius: 5px;
+
 }
 
 
-// a:link, a:visited {
-//     // background-color: #f44336;
-//     color: white;
-//     padding: 14px 25px;
-//     text-align: center;
-//     text-decoration: none;
-//     display: inline-block;
-// }
-//
-// //
-// // a:hover, a:active {
-// //     background-color: red;
-// // }
+.collectionBtn a:hover, a:active {
+    background-color: #1abc9c;
+}
+
+
+.CreateNewCollection{
+  // background-color: yellow;
+  // background-color:red;
+  width: 500px;
+  height: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  justify-content: center;
+  align-content: center;
+
+}
+
+.collectionInputeCreate{
+justify-content: center;
+width:400px;
+height:30px;
+padding: 12px;
+border: none;
+border-radius: 4px;
+margin: 5px 0;
+opacity: 0.85;
+// display: inline-block;
+font-size: 17px;
+line-height: 20px;
+text-decoration: none;
+border: 1px solid grey;
+margin-left: auto;
+margin-right: auto;
+
+}
+
+
+
+
+.collectionSubmitBtn{
+  background-color:#1abc9c;
+  color: white;
+  width:430px;
+  height:50px;
+  padding: 12px;
+  margin: 5px 0;
+  // display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.backAndDeleteCollection a {
+  color:black;
+  text-decoration: none;
+
+}

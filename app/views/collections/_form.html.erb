@@ -1,8 +1,12 @@
 
+<div class="CreateNewCollection">
+
+<h2>Create New Collection</h2>
 <%= form_for @collection,html: {multipart: true} do |f| %>
 
-<%= f.label :name %>
-<%= f.text_field :name %>
-<%= f.submit 'Submit' %>
+<%= f.text_field :name ,  placeholder:"Collection Name", class:"collectionInputeCreate" %>
+<%= f.submit 'Submit', class:"collectionSubmitBtn" %>
 
 <% end %>
+
+</div>

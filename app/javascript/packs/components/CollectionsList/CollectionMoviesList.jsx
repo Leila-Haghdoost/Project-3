@@ -77,10 +77,11 @@ class CollectionMoviesList extends Component {
     const collection = this.state.collection
     const collectionsList = this.state.collectionsList
     return(
-      <div>
-        <Link to="/collections">Back to All Collections</Link>
+      <div className="backAndDeleteCollection">
+
+        <Link className="backAndDeleteCollection" to="/collections">Back to All Collections</Link>
          &nbsp;|&nbsp;
-        <Link to="#" onClick={() => this.deleteCollection() }>Delete Collection</Link>
+        <Link className="backAndDeleteCollection" to="#" onClick={() => this.deleteCollection() }>Delete Collection</Link>
 
         <h2>{collection.name}</h2>
 

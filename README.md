@@ -1,24 +1,36 @@
-# README
+<h1 align="center">
+  <br>
+  <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://raw.githubusercontent.com/Leila-Haghdoost/Project-3/master/app/assets/images/Logo.png" alt="Markdownify" width="200"></a>
+</h1>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h4 align="center">A movie search app with search filtering and collection creation capability</h4>
 
-Things you may want to cover:
+<p align="center">
+  <a href="#about-this-project">About this project</a> •
+  <a href="#user-journey">User journey</a> •
+  <a href="#demo">Demo</a> •
+  <a href="#user-journey">API</a>
+</p>
 
-* Ruby version
+![screenshot](https://raw.githubusercontent.com/Leila-Haghdoost/Project-3/master/app/assets/images/webFirstPage.jpg)
 
-* System dependencies
+## About this project
 
-* Configuration
+This is a Rails/React web app which uses PostgreSQL as database.
 
-* Database creation
+## User journey
 
-* Database initialization
+User could seach by movie name and apply following filters on the result:
+* Genre
+* Year
+* sort
 
-* How to run the test suite
+After login, user will be able to create film collections and add/remove films to them. Each collection will have its specific name whcih could reflect category of films listed in that collection. User could remove collections as well.
 
-* Services (job queues, cache servers, search engines, etc.)
+![screenshot](https://raw.githubusercontent.com/Leila-Haghdoost/Project-3/master/app/assets/images/webSecondPage.png)
 
-* Deployment instructions
+## Demo
+Demo version of MOVIE is available on [Heroku](http://). Username is "lily@ga.co" and "chicken" is the password.
 
-* ...
+## API
+[THE MOVIE DB](https://www.themoviedb.org/) API provides all movies information.
