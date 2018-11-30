@@ -30,6 +30,9 @@ class CollectionMoviesList extends Component {
         return  collection.id === parseInt( this.props.match.params.collectionId );
       })
       // console.log(filteredCollection);
+      filteredCollection.movies.forEach( m => {
+        m.id = m.themoviedb_id;
+      });
       this.setState({ collection: filteredCollection, collectionsList: response.data })
     })
     .catch((error) => {
