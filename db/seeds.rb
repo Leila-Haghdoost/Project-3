@@ -68,7 +68,7 @@ puts "Created #{Collection.all.length} collections."
 Movie.destroy_all
 
 m1 = Movie.create themoviedb_id: 375588, release_date: "2018-11-21" , poster_path: '/AiRfixFcfTkNbn2A73qVJPlpkUo.jpg'
-
+  
 
 m2 = Movie.create themoviedb_id: 480530, release_date: "2018-11-21" , poster_path: '/v3QyboWRoA4O9RbcsqH8tJMe8EB.jpg'
 
