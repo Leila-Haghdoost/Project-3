@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://raw.githubusercontent.com/Leila-Haghdoost/Project-3/master/app/assets/images/Logo.png" alt="Markdownify" width="200"></a>
+  <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://raw.githubusercontent.com/Leila-Haghdoost/Project-3/master/app/assets/images/LogoGit.png" alt="Markdownify" width="200"></a>
 </h1>
 
 <h4 align="center">A movie search app with search filtering and collection creation capability</h4>
