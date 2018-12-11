@@ -80,18 +80,24 @@ class CollectionMoviesList extends Component {
     const collection = this.state.collection
     const collectionsList = this.state.collectionsList
     return(
-      <div className="backAndDeleteCollection">
+      <div className="collectionMoviesShowlist">
+        <div className="backAndDeletebtn">
+          <div className="ad">
+            <Link className="backAndDeleteCollection" to="/collections">Back to All Collections </Link>
+             &nbsp;|&nbsp;
+            <Link className="backAndDeleteCollection" to="#" onClick={() => this.deleteCollection() }> Delete Collection</Link>
+          </div>
+        </div>
+        {/* <div className="s">
+          <h2>{collection.name}</h2>
+        </div> */}
 
-        <Link className="backAndDeleteCollection" to="/collections">Back to All Collections</Link>
-         &nbsp;|&nbsp;
-        <Link className="backAndDeleteCollection" to="#" onClick={() => this.deleteCollection() }>Delete Collection</Link>
-
-        <h2>{collection.name}</h2>
-
-        {/* /Check if Movie list exist/ */}
-          {collection.movies &&
-            <MovieList movies={collection.movies} userCollections={collectionsList} removeButton={this.deleteMovieFromCollection} />
-          }
+        <div className="showListMovies">
+          {/* /Check if Movie list exist/ */}
+            {collection.movies &&
+              <MovieList movies={collection.movies} userCollections={collectionsList} removeButton={this.deleteMovieFromCollection} />
+            }
+        </div>
       </div>
     )
   }

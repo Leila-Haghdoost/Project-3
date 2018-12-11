@@ -3,6 +3,7 @@
 .movieImage{
   background-color: #e0e0e0;
   padding: 5px;
+  
 }
 .movieInfo{
   background-color: #e0e0e0;
@@ -14,12 +15,17 @@
 .movieRow {
   display: flex;
   width: 60%;
-  margin: 0px auto;
+  height: 100%;
+  margin:  auto;
+
 }
 
 .singleMovieContainer {
-  background-color: #333333;
-
+background-color: #333333;
+max-width: 100%;
+height: 630px;
+margin:  auto;
+// margin-bottom: 0px;
 }
 
 

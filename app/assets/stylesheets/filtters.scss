@@ -1,4 +1,24 @@
 .line{
-  border: 0.5px solid black;
+  border: 1px solid DodgerBlue;
   margin: 20px 0px;
+}
+
+.checkbox{
+  width: 20px;
+  height: 20px;
+}
+
+select {
+  // border-radius:none;
+  // margin-left:3px;
+  // background-color:DodgerBlue;
+  // color: white;
+}
+
+
+select:focus{
+	-moz-box-shadow: 0 0 8px #88D5E9;
+	-webkit-box-shadow: 0 0 8px #88D5E9;
+	box-shadow: 0 0 8px #88D5E9;
+	border: 1px solid #88D5E9;
 }

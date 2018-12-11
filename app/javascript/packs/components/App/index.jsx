@@ -101,25 +101,27 @@ class App extends Component {
     const {filteredMovies} = this.state
 
     return(
-    <div className="row">
+    <div className="container">
 
       { true
         &&
-        <div className="side">
-          <h2>Filter by:</h2>
-          <Filters
-            onYearChange={ (selectedYear)=> {
-              this.setState({year:selectedYear}, this.filterList )}}
-            onSortChange={(sortBy)=> {
-              this.setState({sort:sortBy}, this.updateList )}}
-            onGenreChange={ (selectedGenres)=> {
-              this.setState({selectedGenres:selectedGenres}, this.filterList )}}
-        />
+        <div className="leftColumn">
+          <div className="filterInfoColumn">
+            <h2 className="filterTitle">Filter by:</h2>
+            <Filters
+              onYearChange={ (selectedYear)=> {
+                this.setState({year:selectedYear}, this.filterList )}}
+              onSortChange={(sortBy)=> {
+                this.setState({sort:sortBy}, this.updateList )}}
+              onGenreChange={ (selectedGenres)=> {
+                this.setState({selectedGenres:selectedGenres}, this.filterList )}}
+          />
+          </div>
         </div>
       }
 
-      <div className="main">
-        <div className="movieSearch">
+      <div className="rightColumn">
+        <div className="searchColumn">
           {/* <h2>Movie Search</h2> */}
           <input
             className="searchInput"
@@ -131,7 +133,9 @@ class App extends Component {
               this.setState({title:input}, this.searchByTitle )
           }}/>
         </div>
-        <MovieList movies={filteredMovies} userCollections={this.state.userCollections} />
+          <div className="appList">
+            <MovieList movies={filteredMovies} userCollections={this.state.userCollections} />
+          </div>
       </div>
     </div>
     )

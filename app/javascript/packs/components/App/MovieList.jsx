@@ -12,7 +12,7 @@ class MovieList extends Component {
     const { movies } = this.props
     // console.log(movies);
     return (
-      <div className="container">
+      <div className="movieList">
         {movies.map(movie => {
           return (
             <MoviePreview key={movie.id} movie={movie} userCollections={this.props.userCollections} removeButton={this.props.removeButton} />

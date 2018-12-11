@@ -13,7 +13,8 @@
 
 
   <body>
-    <div class="header">
+    <div class="header" id="header">
+
           <div class="headerImage">
             <%= image_tag "Logo.png" , :width=>220 , class:"logoimage" %>
           </div>
@@ -55,9 +56,9 @@
 
 
     <%= yield %>
-    <div class="footer">
+    <!-- <div class="footer">
       <h4>Movies from <a href="https://www.themoviedb.org/">TMDB</a></h4>
-    </div>
+    </div> -->
 
   </body>
 </html>

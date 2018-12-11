@@ -72,6 +72,7 @@ class Filters extends Component {
             return (
             <div key={genre.id}>
               <input
+                className="checkbox"
                 id={`genre-${genre.id}`}
                 type="checkbox"
                 name={`genre-${genre.id}`}

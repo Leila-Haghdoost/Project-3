@@ -37,28 +37,32 @@ class CollectionsList extends Component {
 
     return(
       <div className="collectionBodycontainer">
+        <div className="creationIconheare">
+          <div className="collectionBtn">
+            <a href='/collections/new' >Create New Collection</a>
+          </div>
+        </div>
         <div className="collectionWrapper">
+
           {collections.map(collection => {
 
             return <Link to={{
               pathname: `/collections/${collection.id}`
             }}>
             <div className="collectionIcon">
-
               { collection && collection.movies && collection.movies.length > 0 ?
                 <img src={imageBaseURL + collection.movies[0].poster_path} className="iconUrl"/>
                 :
-                <img src={iconUrl} className="iconUrl"/>
+                <img className="iconUrl"/>
               }
-
               <h4 className="collectionName">{collection.name}</h4><br/>
             </div>
           </Link>;
 
           })}
         </div>
-        <br/>
-        <div className="collectionBtn"><a href='/collections/new'>Create New Collection</a></div>
+        {/* <br/> */}
+
 
       </div>
     )
